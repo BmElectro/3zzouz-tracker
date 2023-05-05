@@ -25,7 +25,7 @@ function DaysRender({from, to, blob}){
         var days = []
 
 
-        while (!dayjs(date.toISOString().split('T')[0]).isSame(to)) {
+        while (!dayjs(date.toISOString().split('T')[0]).isAfter(to)) {
             const dateParsed = date.toISOString().split('T')[0]
 
             if(
