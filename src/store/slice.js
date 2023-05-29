@@ -4,12 +4,15 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 
 export const fetch3zzouz = createAsyncThunk('azzouz/fetch3zzouz', async (_,{dispatch}) => {
     try {
+        console.log('sdfdsfas')
         
         const request = await fetch('/api/getJsonBlob')
         const response = await request.json()
+        console.log(response)
         return response
     } catch (error) {
-            setTimeout(()=>{ dispatch(fetchCat()) }, 100)
+        console.log(error)
+            setTimeout(()=>{ dispatch(fetch3zzouz()) }, 100)
 
     }
 

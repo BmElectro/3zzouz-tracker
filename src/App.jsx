@@ -20,6 +20,7 @@ function App() {
   const dispatch = useDispatch()
   
   useEffect(()=>{
+      console.log('asdas')
       dispatch(fetch3zzouz())
   },[])
 
