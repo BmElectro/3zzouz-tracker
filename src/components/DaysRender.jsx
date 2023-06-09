@@ -1,11 +1,14 @@
 
 import dayjs from 'dayjs';
 import Chip from '@mui/material/Chip';
+import { useDispatch } from 'react-redux';
+import { updateChart } from '../store/chartSlice'
 
 
 
 function DaysRender({from, to, blob}){
 
+    const dispatch = useDispatch()
     
     const renderLabel = (status) => {
         if (status == 'joined') {
@@ -32,8 +35,11 @@ function DaysRender({from, to, blob}){
 
     function getDaysInMonthUTC(from, to) {
 
+        console.log(';asdfdas')
         var date = new Date(Date.UTC(2023, 1, 1))
         var days = []
+
+        let chartObj = {noTalk:0, no:0, yes:0}
 
 
         while (!dayjs(date.toISOString().split('T')[0]).isAfter(to)) {
@@ -47,18 +53,25 @@ function DaysRender({from, to, blob}){
                 let status = ''
                 if(blob.status.joined.includes(dateParsed)){
                     status = 'joined'
+                    chartObj.yes++
                 }
                 if(blob.status.noTalk.includes(dateParsed)){
                     status = 'noTalk'
+                    chartObj.noTalk++
                 }
                 if (dayjs(date.toISOString().split('T')[0]).isAfter(dayjs())){
                     status = 'In'
+                }
+                else{
+                    chartObj.no++
                 }
                 days.push({date: new Date(date), status:status})
             }
 
             date.setUTCDate(date.getUTCDate() + 1)
         }
+        dispatch(updateChart(chartObj))
+
         return days
     
     }

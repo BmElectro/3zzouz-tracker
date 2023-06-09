@@ -101,3 +101,8 @@ nav span:hover{
 .all-days-continer{
   padding: 4rem;
 }
+
+.main-container{
+  display: flex;
+  
+}
