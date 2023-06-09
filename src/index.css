@@ -104,5 +104,6 @@ nav span:hover{
 
 .main-container{
   display: flex;
+  flex-wrap: wrap;
   
 }
