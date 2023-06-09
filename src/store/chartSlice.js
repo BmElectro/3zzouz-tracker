@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const chartSlice = createSlice({
     name: 'chart',
-    initialState: {chart:{values: [1, 5 ,10], labels:['asdasd' , 'sdfsdf', 'asdfas'], colors:[]} },
+    initialState: {chart:{values: [], labels:[], colors:[]} },
     reducers:{
         updateChart: (state, action) => { 
             let newObj = {values: [], labels:[], colors:[]}

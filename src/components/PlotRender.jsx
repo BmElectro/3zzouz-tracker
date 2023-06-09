@@ -7,6 +7,7 @@ function DaysRender(){
 
 
     return(
+      chartValues.values.length > 0 ?
         <Plot
           data={[
             {
@@ -19,6 +20,7 @@ function DaysRender(){
           layout={{width: 600, height: 400, paper_bgcolor:'#242424', title:{text:'asdasdas', font:{color:'white'}}, legend:{font:{color:'white'}}, colorway:chartValues.colors}}
           config={{displayModeBar: false}}
         />
+        : null
     )
 }
 
