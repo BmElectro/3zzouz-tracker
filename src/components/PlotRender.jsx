@@ -17,7 +17,7 @@ function DaysRender(){
               sort:false
             },
           ]}
-          layout={{width: 600, height: 400, paper_bgcolor:'#242424', title:{text:'asdasdas', font:{color:'white'}}, legend:{font:{color:'white'}}, colorway:chartValues.colors}}
+          layout={{width: 600, height: 400, paper_bgcolor:'#242424', title:{text:'Stats', font:{color:'white'}}, legend:{font:{color:'white'}}, colorway:chartValues.colors}}
           config={{displayModeBar: false}}
         />
         : null
